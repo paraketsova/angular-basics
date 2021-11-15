@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {timeout} from "rxjs";
 
 @Component({
   selector: 'app-root', // именно этот селектор будет опознан для выбора и перенесён в HTML модуль при загрузке рендеринга
@@ -13,4 +14,12 @@ export class AppComponent { //здесь заводим все динамиче�
 
   obj = { a:1, b: {c: 2} }
 
+  img = 'https://miro.medium.com/max/400/1*PWe4DmAE78BLD4SHpXizMw.png'
+
+  constructor() {
+    setTimeout(() => {
+      console.log('Timeout is over')
+      this.img = 'https://angular.io/assets/images/logos/angular/angular.png'
+    }, 5000)
+  }
 }
