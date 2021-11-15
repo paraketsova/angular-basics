@@ -8,5 +8,9 @@ import {timeout} from "rxjs";
 })
 export class AppComponent { //здесь заводим все динамические переменные
 
+  title = 'Initial'
 
+  onInput(event: any) {
+    this.title = event.target.value
+  }
 }
