@@ -323,7 +323,7 @@
 
 <button (click)="onClick()">click me</button>
 
-<input type="text" (input)="onInput($event)"> <!--  сделаем так, чтобы под инпутом в параграфе дублировалось содержание -->
+<input type="text" (keyup)="onInput($event)"> <!--  ПРИ поднятии клавиши теперь под инпутом в параграфе дублировалось содержание -->
 <p><strong>{{inputValue}}</strong></p>
 
 <hr>

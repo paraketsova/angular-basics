@@ -26,9 +26,9 @@ export class AppComponent { //здесь заводим все динамиче�
   }
 
 //  создаем метод, который будем вызывать в HTML
-  onInput = (event: any) => {
+  onInput = (event: KeyboardEvent) => {
     console.log('Event', event);
-    this.inputValue = event.target.value;
+    this.inputValue = (<HTMLInputElement>event.target).value;
   }
 
   onClick() {
