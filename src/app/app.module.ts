@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-@NgModule({
+@NgModule({ // декоратор
   declarations: [
     AppComponent
   ],
@@ -11,6 +11,6 @@ import { AppComponent } from './app.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] //указываем, что главный компонент для запуска - Аппкомп
 })
 export class AppModule { }
