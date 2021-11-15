@@ -26,14 +26,14 @@ export class AppComponent { //здесь заводим все динамиче�
   }
 
 //  создаем метод, который будем вызывать в HTML
-  onInput = (event: any) => {
+  onInput(event: any) {
     // console.log('Event', event);
     this.inputValue = (<HTMLInputElement>event.target).value;
   }
 
-  // onBlur(str: string) {
-  // this.inputValue = str
-  // }
+  onBlur(str: string) {
+  this.inputValue = str
+  }
 
   onClick() {
     console.log('Click!')
