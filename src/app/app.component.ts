@@ -7,27 +7,5 @@ import {Component} from '@angular/core';
 })
 export class AppComponent { //здесь заводим все динамические переменные
 
-  arr = [1, 1, 2, 3, 5, 8, 13]
-
-  objs = [
-    {
-      title: 'Post 1',
-      author: 'Mariia',
-      comments: [
-        {name: 'Max', text: 'Lorem1'},
-        {name: 'Max', text: 'Lorem2'},
-        {name: 'Max', text: 'Lorem3'},
-      ]
-    },
-
-    {
-      title: 'Post 2',
-      author: 'Mariia2',
-      comments: [
-        {name: 'Max2', text: 'Lorem2-1'},
-        {name: 'Max2', text: 'Lorem2-2'},
-        {name: 'Max2', text: 'Lorem2-3'},
-      ]
-    }
-  ]
+  now: Date = new Date()
 }
