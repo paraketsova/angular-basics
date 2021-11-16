@@ -16,4 +16,9 @@ export class AppComponent { //здесь заводим все динамиче�
     {title: 'I want to survive', text: 'I want to believe', id: 1},
     {title: 'I want to break free', text: 'I want to break free from your lies', id: 2}
   ]
+
+  updatePosts(post: Post) {
+    this.posts.unshift(post)
+    console.log('Post', post)
+  }
 }
