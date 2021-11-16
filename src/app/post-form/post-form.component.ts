@@ -31,9 +31,9 @@ export class PostFormComponent implements OnInit {
         text: this.text
       }
       this.onAdd.emit(post)
-      // емит передаёт наружу в апп данные из формы ввода
+      // onAdd. передаёт наружу в апп данные из формы ввода
 
-      console.log('New Post: ', post)
+      // console.log('New Post: ', post)
       this.title = this.text = ''
     }
   }
