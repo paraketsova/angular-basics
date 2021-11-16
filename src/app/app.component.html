@@ -4,11 +4,24 @@
 <button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
 
 <!-- вводим директиву нижнему диву. Эта сразу авт байндится и позволяет вводить стили -->
-<div [ngStyle]="{
-  width: '200px',
-  height: '200px',
-  border: 'solid black 1px',
-  background: backgroundToggle ? 'red' : 'blue'
-}">
+<!--<div [ngStyle]="{-->
+<!--  width: '200px',-->
+<!--  height: '200px',-->
+<!--  border: 'solid black 1px',-->
+<!--  background: backgroundToggle ? 'red' : 'blue'-->
+<!--}">-->
 
-</div>
+<!--</div>-->
+<!--
+
+<p [ngClass]="{
+  red: backgroundToggle,
+  blue: !backgroundToggle
+}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, sapiente?</p>
+}
+-->
+
+<!-- red: backgroundToggle === true, -->
+
+<p [class.blue]="!backgroundToggle"
+  [class.red]="backgroundToggle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, ipsam.</p>
