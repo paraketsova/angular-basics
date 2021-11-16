@@ -10,6 +10,12 @@
   <app-post
     *ngFor = "let p of posts"
     [post]="p"
-  ></app-post>
+  >
+    <small *ngIf="p.text.length > 10; else short">Too long post</small>
+    <ng-template #short>
+      <small>Short post</small>
+    </ng-template>
+  </app-post>
+  <!-- проверяем пост на длину символов -->
 
 </div>
