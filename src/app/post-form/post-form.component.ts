@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Post} from "../app.component";
 
 @Component({
@@ -10,6 +10,11 @@ export class PostFormComponent implements OnInit {
 
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>()
   // аналогично Js:     const onAdd = new EventEmitter()
+
+  @ViewChild('titleInput', {static: false}) inputRef: any
+  // вьючайлд требует двух параметров на входе. Первый -строка с именем читаемого объекта (но без #)
+  // и второй параметр - объект. Здесь он с одним полем, значение которого булевое
+  // те переменные, кот. мы получаем с помощью вьюЧайлд имеют спец тип, который называется ЭлементРеф, то тут мы просто пишем any
 
   title = ''
   text = ''
@@ -31,6 +36,10 @@ export class PostFormComponent implements OnInit {
       console.log('New Post: ', post)
       this.title = this.text = ''
     }
+  }
+
+  focusTitle(): void {
+    this.inputRef.nativeElement.focus()
   }
 
 }
