@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {timeout} from "rxjs";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root', // именно этот селектор будет опознан для выбора и перенесён в HTML модуль при загрузке рендеринга
@@ -8,9 +7,4 @@ import {timeout} from "rxjs";
 })
 export class AppComponent { //здесь заводим все динамические переменные
 
-  title = 'Initial'
-
-  onInput(event: any) {
-    this.title = event.target.value
-  }
 }
