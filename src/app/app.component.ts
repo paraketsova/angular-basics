@@ -7,5 +7,5 @@ import {Component} from '@angular/core';
 })
 export class AppComponent { //здесь заводим все динамические переменные
 
-  backgroundToggle = false
+  toggle = false
 }
