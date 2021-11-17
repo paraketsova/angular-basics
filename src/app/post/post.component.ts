@@ -3,6 +3,7 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ContentChild,
   DoCheck,
@@ -19,7 +20,11 @@ import {Post} from "../app.component";
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+  // при значении onPush ангуляр будет реагировать ТОЛЬКО на входные свойства OnInput
+  // и если мы изменим Default на ОнПуш, то изменение названий постов перестанет работать по таймауту
+  // или мы можем внести ссылку на отслеживаемый элемент в ОнИнпутв апп.компонент.тс
 })
 export class PostComponent implements
   OnInit,
@@ -57,7 +62,7 @@ export class PostComponent implements
 //  {static: ...}  вообще не нужен в новой версии Анг
 
   ngDoCheck(): void {
-    console.log('ngDocheck')
+    console.log('ngDoCheck')
     // метод позволяет остлеживать изменения и вызывается при любых изменениях. Вызывается после ngOnChanges иngOnInit
   }
 
