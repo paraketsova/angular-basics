@@ -19,6 +19,11 @@ export class AppComponent { //здесь заводим все динамиче�
 
   updatePosts(post: Post) {
     this.posts.unshift(post)
-    console.log('Post', post)
+    // console.log('Post', post)
+  }
+
+  removePost(id: number) {
+    console.log('I want to remove', id)
+    this.posts = this.posts.filter(p => p.id !==id)
   }
 }
