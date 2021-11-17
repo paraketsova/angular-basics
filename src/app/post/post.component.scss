@@ -1,0 +1,8 @@
+h2 {
+  font-weight: bold;
+  font-style: italic;
+  color: red;
+}
+// локализация стилей внутри компонентов!!! Но мы можме принудительно задать
+// стили компонента как глобальные стили - см. файл post.component.ts
+// @Component add encapsulation

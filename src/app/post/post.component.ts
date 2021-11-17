@@ -13,7 +13,8 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  SimpleChanges
+  SimpleChanges,
+  ViewEncapsulation
 } from '@angular/core';
 import {Post} from "../app.component";
 
@@ -21,10 +22,13 @@ import {Post} from "../app.component";
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
   // при значении onPush ангуляр будет реагировать ТОЛЬКО на входные свойства OnInput
   // и если мы изменим Default на ОнПуш, то изменение названий постов перестанет работать по таймауту
   // или мы можем внести ссылку на отслеживаемый элемент в ОнИнпутв апп.компонент.тс
+  encapsulation: ViewEncapsulation.None
+  // это позволит задать стиль, прописанный в компоненте, как глобальный стиль
+  // см файл post.component.css
 })
 export class PostComponent implements
   OnInit,
