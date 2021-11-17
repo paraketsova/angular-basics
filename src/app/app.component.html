@@ -1,5 +1,12 @@
 <div class="container">
   <h1>Angular Directives</h1>
 
-  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <p appStyle="red" fontWeight="bold">
+    Lorem ipsum dolor sit amet consecte adipisicing elit.
+  </p>
 </div>
+
+<!--appStyle and fontWeight не обязательно тут байндить
+ квадратными скобками, т.к. параметром служат строки.
+ ??? -> Но любое другое значение параметра кроме строки сработает только
+ если будет байндится параметр. Так что лучше всегда писать скобки-->
