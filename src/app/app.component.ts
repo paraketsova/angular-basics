@@ -12,5 +12,6 @@ export interface Post {
   styleUrls: ['./app.component.scss']  // конфиграция для стиля выбранного выше компонента
 })
 export class AppComponent { //здесь заводим все динамические переменные
-
+  isVisible = true
+  // добавили флаг для .wrap
 }

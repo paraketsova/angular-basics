@@ -8,7 +8,32 @@
   <p appStyle="blue" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
     Lorem ipsum dolor sit amet consecte adipisicing elit.
   </p>
+
+  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+
+<!--  <div *ngIf="isVisible" class="wrap">-->
+<!--    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et in reprehenderit.-->
+<!--    Cupiditate doloremque illo pariatur? Obcaecati perspiciatis sunt ut.-->
+<!--  </div>-->
+  <!-- на самом деле анг создаёт нг-темплейт и оборачивает в него врап-->
+
+  <div class="wrap" *appIfnot="!isVisible">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et in reprehenderit.
+    Cupiditate doloremque illo pariatur? Obcaecati perspiciatis sunt ut.
+  </div>
+
+<!-- абзац ниже - полная копия абзаца выше -->
+  <ng-template [appIfnot]="!isVisible">
+    <div class="wrap" *appIfnot="!isVisible">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et in reprehenderit.
+      Cupiditate doloremque illo pariatur? Obcaecati perspiciatis sunt ut.
+    </div>
+  </ng-template>
+
+
+
 </div>
+
 
 <!--appStyle and fontWeight не обязательно тут байндить
  квадратными скобками, т.к. параметром служат строки.

@@ -4,12 +4,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {StyleDirective} from "./directives/style.directive";
+import {IfnotDirective} from './directives/ifnot.directive';
 
 
 @NgModule({ // декоратор
   declarations: [
     AppComponent,
-    StyleDirective
+    StyleDirective,
+    IfnotDirective
   ],
   imports: [
     BrowserModule,
