@@ -9,4 +9,6 @@ export class AppComponent { //здесь заводим все динамиче�
   e: number = Math.E
 
   str: string = 'hello world'
+
+  date: Date = new Date()
 }
