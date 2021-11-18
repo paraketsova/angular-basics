@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']  // конфиграция для стиля выбранного выше компонента
 })
 export class AppComponent { //здесь заводим все динамические переменные
-
+  e: number = Math.E
 }
