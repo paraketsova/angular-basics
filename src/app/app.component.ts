@@ -7,4 +7,6 @@ import {Component} from '@angular/core';
 })
 export class AppComponent { //здесь заводим все динамические переменные
   e: number = Math.E
+
+  str: string = 'hello world'
 }
