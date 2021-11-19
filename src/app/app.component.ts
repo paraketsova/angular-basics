@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
-import {Observable} from "rxjs";
 
 export interface Post {
   title: string
   text: string
-  [field: string]: string
 }
 
 @Component({
@@ -16,15 +14,4 @@ export interface Post {
 
 export class AppComponent { //здесь заводим все динамические переменные
 
-  pr: Promise<string> = new Promise<string>( resolve => {
-    setTimeout(() => {
-      resolve('Promise Resolved')
-    }, 4000)
-  })
-
-    date: Observable<Date> = new Observable<Date> ( obs => {
-      setInterval( () => {
-        obs.next(new Date())
-      }, 1000)
-    })
 }
