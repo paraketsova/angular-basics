@@ -1,60 +1,18 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-  <p>
-    {{ e | number:'1.1-5' }}
-<!--  пропускаем переменную через пайп с именем намбер.
- первая цифра - сколько цифр до запятой.
- Второе значение(указано после первого и точки за ним) - сколько цифр
- указыватьь после точки в переменной (от 1 до 5)-->
-  </p>
-  <hr/>
 
-  <p>
-    {{ str | uppercase | lowercase | titlecase }}
-  </p>
-  <p>
-    {{ str | slice:1:-2 }}
-  </p>
-  <hr/>
+  <button class="btn" (click)="searchField = 'title'">Title</button>
+  <button class="btn" (click)="searchField = 'text'">Text</button>
 
-  <p>
-    {{date | date:'MMMM dd, yyy, HH:mm'}}
-  </p>
+  <input type="text" [(ngModel)]="search">
 
-  <hr/>
-
-  <p>
-    {{float}}
-  </p>
-
-  <p>
-    {{float | currency}}
-<!--  приводит число к валюте  -->
-  </p>
-
-  <p>
-    {{float | percent:'2.00'}}
-    <!--  приводит число к валюте  -->
-  </p>
-  <hr/>
-
-  <pre>{{obj | json}}</pre>
-  <p>{{obj | json}}</p>
-
-  <hr/>
-
-  <p>
-    {{10 | mult}}
-    {{10 | mult:2}}
-    {{10 | mult:3}}
-    {{10 | mult:5}}
-    {{10 | mult:8}}
-    {{10 | mult:13}}
-  </p>
-
-  <p>
-    {{'I    want to       break   free' | exMarks}}
-  </p>
-
+    <div
+      *ngFor="let post of posts | filter: search: searchField"
+      class="card"
+    >
+      <!--  в нгФор мы передаём в пайп searchField -->
+      <h2>{{post.title}}</h2>
+      <p>{{post.text}}</p>
+    </div>
 </div>
 
