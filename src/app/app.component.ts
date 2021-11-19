@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Observable} from "rxjs";
 
 export interface Post {
   title: string
@@ -11,22 +12,19 @@ export interface Post {
   templateUrl: './app.component.html', // конфигурация для шаблона выбранного выше компонента
   styleUrls: ['./app.component.scss']  // конфиграция для стиля выбранного выше компонента
 })
+
+
 export class AppComponent { //здесь заводим все динамические переменные
 
-  search = ''
-  searchField = 'title'
+  pr: Promise<string> = new Promise<string>( resolve => {
+    setTimeout(() => {
+      resolve('Promise Resolved')
+    }, 4000)
+  })
 
- posts: Post[] = [
-   {title: 'One', text: "I want to break free!"},
-   {title: 'Two', text: "I've fallen in love..."},
-   {title: 'Three', text: "It's strange but it's true!"},
- ]
-
-  addPost() {
-    this.posts.unshift({
-      // аншифт вместо пуш добавляет новый пост вверх, а не вниз ленты
-      title: 'But life still goes on',
-      text: 'I can\'t get used to, living without, living without...'
+    date: Observable<Date> = new Observable<Date> ( obs => {
+      setInterval( () => {
+        obs.next(new Date())
+      }, 1000)
     })
-  }
 }
