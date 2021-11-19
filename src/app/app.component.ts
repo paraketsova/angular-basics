@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AppCounterServices} from "./services/app-counter.services";
 
 export interface Post {
   title: string
@@ -13,5 +14,10 @@ export interface Post {
 
 
 export class AppComponent { //здесь заводим все динамические переменные
+
+  constructor(public appCounterService: AppCounterServices) {
+  //  сначала оценивает досупность, потом пишем имя,
+    //  потом указываем подключаемый сервис
+  }
 
 }
