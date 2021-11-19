@@ -21,4 +21,12 @@ export class AppComponent { //здесь заводим все динамиче�
    {title: 'Two', text: "I've fallen in love..."},
    {title: 'Three', text: "It's strange but it's true!"},
  ]
+
+  addPost() {
+    this.posts.unshift({
+      // аншифт вместо пуш добавляет новый пост вверх, а не вниз ленты
+      title: 'But life still goes on',
+      text: 'I can\'t get used to, living without, living without...'
+    })
+  }
 }
